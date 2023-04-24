@@ -9,7 +9,7 @@ import transactionsRouter from "./routes/transactions.js"
 dotenv.config()
 
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000
 
 const connect = async () => {
     try {
@@ -26,10 +26,10 @@ mongoose.connection.on('connected', () => {
 })
 app.use(express.json());
 
-app.use('/users', usersRouter)
-app.use('/auth', authRouter)
-app.use('/transactions', transactionsRouter)
-app.use('/products', productsRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/auth', authRouter)
+app.use('/api/transactions', transactionsRouter)
+app.use('/api/products', productsRouter)
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;

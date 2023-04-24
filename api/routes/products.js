@@ -8,6 +8,6 @@ router.put('/:id', deleteProduct)
 //DELETE
 router.delete('/:id', deleteProduct)
 //GET
-router.get('/find/:id', getProduct)
+router.get('/:id', getProduct)
 router.get('/', getProducts)
 export default router
