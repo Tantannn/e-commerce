@@ -8,17 +8,7 @@ const UserSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      required: true,
       unique: true,
-    },
-    country: {
-      type: String,
-    },
-    img: {
-      type: String,
-    },
-    city: {
-      type: String,
     },
     phone: {
       type: String,

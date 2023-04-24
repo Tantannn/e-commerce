@@ -1,11 +1,21 @@
 import UserSchema from '../models/user.js'
 
 
-export const updateUsers = async (req, res, next) => {
-    res.send('hi')
+export const updateUser = async (req, res, next) => {
+    try {
+        const users = await UserSchema.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
+        res.status(200).json(users)
+    } catch (error) {
+        next(error)
+    }
 }
-export const deleteUsers = async (req, res, next) => {
-    res.send('hi')
+export const deleteUser = async (req, res, next) => {
+    try {
+        await findByIdAndDelete(req.params.id)
+        res.status(200).json('user deleted')
+    } catch (error) {
+        next(error)
+    }
 }
 export const getUser = async (req, res, next) => {
     try {
@@ -13,7 +23,8 @@ export const getUser = async (req, res, next) => {
         res.status(200).json(users)
     } catch (error) {
         next(error)
-    }}
+    }
+}
 export const getUsers = async (req, res, next) => {
     try {
         const users = await UserSchema.find()

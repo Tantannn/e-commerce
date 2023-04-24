@@ -3,6 +3,8 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import usersRouter from "./routes/users.js"
 import authRouter from "./routes/auth.js"
+import productsRouter from "./routes/products.js"
+import transactionsRouter from "./routes/transactions.js"
 
 dotenv.config()
 
@@ -24,8 +26,21 @@ mongoose.connection.on('connected', () => {
 })
 app.use(express.json());
 
-app.use('/api/users', usersRouter)
-app.use('/api/auth', authRouter)
+app.use('/users', usersRouter)
+app.use('/auth', authRouter)
+app.use('/transactions', transactionsRouter)
+app.use('/products', productsRouter)
+
+app.use((err, req, res, next) => {
+    const errorStatus = err.status || 500;
+    const errorMessage = err.message || "Something went wrong!";
+    return res.status(errorStatus).json({
+        success: false,
+        status: errorStatus,
+        message: errorMessage,
+        stack: err.stack,
+    });
+});
 
 app.listen(port, () => {
     connect();
