@@ -13,7 +13,7 @@ const ProductAPI = {
 
 	getDetail: (id) => {
 		const url = `/products/${id}`;
-		return axiosClient.get(url);
+		return axiosClient.put(url);
 	},
 
 	getPagination: (query) => {

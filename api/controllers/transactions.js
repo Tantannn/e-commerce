@@ -1,4 +1,4 @@
-import TransactionSchema from '../models/Transactions.js'
+import TransactionSchema from '../models/transactions.js'
 
 
 export const createTransaction = async (req, res, next) => {
