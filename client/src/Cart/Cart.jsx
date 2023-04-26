@@ -61,18 +61,10 @@ function Cart(props) {
 	useEffect(() => {
 		const fetchData = async () => {
 			if (localStorage.getItem('id_user')) {
-				const params = {
-					idUser: localStorage.getItem('id_user'),
-				};
-
-				const query = '?' + queryString.stringify(params);
-
-				console.log(query);
-
-				const response = await CartAPI.getCarts(query);
-
+				const params = localStorage.getItem('id_user')
+				
+				const response = await CartAPI.getCarts(params);
 				setCart(response);
-
 				getTotal(response);
 			}
 		};
@@ -97,9 +89,7 @@ function Cart(props) {
 				};
 
 				const query = '?' + queryString.stringify(params);
-
 				const response = await CartAPI.deleteToCart(query);
-				console.log(response);
 			};
 
 			fetchDelete();

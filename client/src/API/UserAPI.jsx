@@ -1,9 +1,9 @@
 import axiosClient from './axiosClient';
 
 const UserAPI = {
-	getAllData: () => {
-		const url = '/users';
-		return axiosClient.get(url);
+	postLogin: (input) => {
+		const url = '/auth/login';
+		return axiosClient.post(url, input);
 	},
 
 	getDetailData: (id) => {
@@ -11,9 +11,9 @@ const UserAPI = {
 		return axiosClient.get(url);
 	},
 
-	postSignUp: (query) => {
-		const url = `/users/signup/${query}`;
-		return axiosClient.post(url);
+	postSignUp: (params) => {
+		const url = `/auth/register`;
+		return axiosClient.post(url, params);
 	},
 };
 

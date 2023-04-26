@@ -99,18 +99,20 @@ function SignUp(props) {
 
 							const fetchSignUp = async () => {
 								const params = {
-									fullname: fullname,
+									username: fullname,
 									email: email,
 									password: password,
 									phone: phone,
 								};
 
-								const query = '?' + queryString.stringify(params);
+								try {
+									const response = await UserAPI.postSignUp(params);
+									if(response)
+									setSuccess(true);
+								} catch (error) {
+									console.log(error);
+								}
 
-								const response = await UserAPI.postSignUp(query);
-								console.log(response);
-
-								setSuccess(true);
 							};
 
 							fetchSignUp();

@@ -2,8 +2,8 @@ import axiosClient from './axiosClient';
 
 const CheckoutAPI = {
 	postEmail: (query) => {
-		const url = `/email${query}`;
-		return axiosClient.post(url);
+		const url = `/transactions/email`;
+		return axiosClient.post(url, query);
 	},
 };
 

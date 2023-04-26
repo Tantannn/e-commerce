@@ -88,7 +88,7 @@ function Shop(props) {
 			// Ngược lại thì nó sẽ gọi hàm pagination và phân loại sản phẩm
 			if (pagination.category === 'all') {
 				response = await ProductAPI.getAPI();
-				console.log(response);
+				setProducts(response);
 			} else {
 				const params = {
 					page: pagination.page,
@@ -132,7 +132,6 @@ function Shop(props) {
 			const newQuery = '?' + query;
 
 			const response = await ProductAPI.getPagination(newQuery);
-			console.log(response);
 
 			setProducts(response);
 			setTemp(response);
@@ -140,6 +139,7 @@ function Shop(props) {
 
 		fetchData();
 	}, [pagination]);
+	console.log(products);
 
 	return (
 		<div className='container'>

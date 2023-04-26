@@ -12,7 +12,7 @@ const ProductAPI = {
 	},
 
 	getDetail: (id) => {
-		const url = `/products/${id}`;
+		const url = `/products/find/${id}`;
 		return axiosClient.get(url);
 	},
 

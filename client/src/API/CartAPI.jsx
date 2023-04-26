@@ -1,23 +1,23 @@
 import axiosClient from './axiosClient';
 
 const CartAPI = {
-	getCarts: (query) => {
-		const url = `/carts${query}`;
+	getCarts: (params) => {
+		const url = `/transactions/find/${params}`;
 		return axiosClient.get(url);
 	},
 
 	postAddToCart: (query) => {
-		const url = `/carts/add${query}`;
-		return axiosClient.post(url);
+		const url = `/transactions`;
+		return axiosClient.post(url, query);
 	},
 
 	deleteToCart: (query) => {
-		const url = `/carts/delete${query}`;
+		const url = `/transactions/${query}`;
 		return axiosClient.delete(url);
 	},
 
 	putToCart: (query) => {
-		const url = `/carts/update${query}`;
+		const url = `/transactions/${query}`;
 		return axiosClient.put(url);
 	},
 };

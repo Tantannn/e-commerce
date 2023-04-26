@@ -2,22 +2,28 @@ import mongoose from "mongoose";
 
 
 const TransactionSchema = new mongoose.Schema({
-  user: {
+  idUser: {
     type: Object,
     require: true,
   },
-
-  rooms:Array,
-  price: {
+  idProduct: {
+    type: String,
+    require: true,
+  },
+  count: {
     type: Number,
     require: true,
   },
-  payment: {
+  img: {
     type: String,
     require: true,
   },
-  status: {
+  nameProduct: {
     type: String,
+    require: true,
+  },
+  priceProduct: {
+    type: Number,
     require: true,
   },
 });
