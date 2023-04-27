@@ -54,12 +54,13 @@ export const postOrder = async (req, res, next) => {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-            user: 'tyrel.christiansen@ethereal.email',
-            pass: 'EEPFMhXd49CckW6Qa1'
+            user: 'coy.welch@ethereal.email',
+            pass: 'BJXTEMJvssmJ1HUHQW'
         }
     });
     try {
         const transactions = await TransactionSchema.find({ idUser: req.body.idUser })
+        if (!transactions) return next(createError(404, "Nothing in your cart"));
         const table = transactions.map((pro) => {
             return `<tr>
         <td>${pro.nameProduct}</td>
@@ -86,17 +87,15 @@ export const postOrder = async (req, res, next) => {
             </tr>
          ${table}
         </table>
-        <h1>Tổng Thanh Toán ${req.body.total} VND</h1>
         <h1>Cám Ơn Bạn</h1>
         `,
         };
-        const newTransactions = new HistorySchema(...transactions)
-        console.log(newTransactions);
         await transporter.sendMail(mailOptions);
-        await newTransactions.save()
+        await HistorySchema.insertMany(transactions)
+        await HistorySchema.updateMany({ idUser: req.body.idUser }, {$set: req.body})
         await TransactionSchema.deleteMany({ idUser: req.body.idUser })
 
-        return res.status(200).json("Order Thành Công");
+        res.status(200).json("Order Thành Công");
     } catch (err) {
         next(err);
     }

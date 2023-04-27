@@ -1,5 +1,4 @@
 import axiosClient from './axiosClient';
-
 const ProductAPI = {
 	getAPI: () => {
 		const url = '/products';
@@ -12,8 +11,8 @@ const ProductAPI = {
 	},
 
 	getDetail: (id) => {
-		const url = `/products/${id}`;
-		return axiosClient.put(url);
+		const url = `/products/find/${id}`;
+		return axiosClient.get(url);
 	},
 
 	getPagination: (query) => {

@@ -8,22 +8,19 @@ MainHistory.propTypes = {};
 function MainHistory(props) {
 	const [listCart, setListCart] = useState([]);
 
+	const idUser= localStorage.getItem('id_user')
 	useEffect(() => {
 		const fetchData = async () => {
-			const params = {
-				idUser: localStorage.getItem('id_user'),
-			};
+	
 
-			const query = '?' + queryString.stringify(params);
-
-			const response = await HistoryAPI.getHistoryAPI(query);
+			const response = await HistoryAPI.getHistoryAPI(idUser);
 			console.log(response);
 
 			setListCart(response);
 		};
 
 		fetchData();
-	}, []);
+	}, [idUser]);
 
 	return (
 		<div className='container'>
@@ -115,7 +112,7 @@ function MainHistory(props) {
 										<p className='mb-0 small'>{value.idUser}</p>
 									</td>
 									<td className='align-middle border-0'>
-										<p className='mb-0 small'>{value.fullname}</p>
+										<p className='mb-0 small'>{value.username}</p>
 									</td>
 									<td className='align-middle border-0'>
 										<p className='mb-0 small'>{value.phone}</p>
@@ -124,7 +121,7 @@ function MainHistory(props) {
 										<p className='mb-0 small'>{value.address}</p>
 									</td>
 									<td className='align-middle border-0'>
-										<p className='mb-0 small'>${value.total}</p>
+										<p className='mb-0 small'>${value.priceProduct}</p>
 									</td>
 									<td className='align-middle border-0'>
 										<p className='mb-0 small'>
@@ -141,7 +138,7 @@ function MainHistory(props) {
 									<td className='align-middle border-0'>
 										<Link
 											className='btn btn-outline-dark btn-sm'
-											to={`/history/${value._id}`}>
+											to={`/history/${idUser}`}>
 											View
 											<i className='fas fa-long-arrow-alt-right ml-2'></i>
 										</Link>

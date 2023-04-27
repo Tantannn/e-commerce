@@ -27,7 +27,7 @@ export const deleteHistory = async (req, res, next) => {
 }
 export const getHistory = async (req, res, next) => {
     try {
-        const History = await HistorySchema.findById(req.params.id)
+        const History = await HistorySchema.find({idUser:req.params.id})
         res.status(200).json(History)
     } catch (error) {
         next(error)
