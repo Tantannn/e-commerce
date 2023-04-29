@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import ProductAPI from '../API/ProductAPI';
-import { Link } from 'react-router-dom';
 import Search from './Component/Search';
 import Pagination from './Component/Pagination';
 import Products from './Component/Products';
@@ -11,7 +10,6 @@ import convertMoney from '../convertMoney';
 
 function Shop(props) {
 	const [products, setProducts] = useState([]);
-	const [temp, setTemp] = useState([]);
 
 	//state dùng để sắp xếp sản phẩm
 	const [sort, setSort] = useState('default');
@@ -134,7 +132,6 @@ function Shop(props) {
 			const response = await ProductAPI.getPagination(newQuery);
 
 			setProducts(response);
-			setTemp(response);
 		};
 
 		fetchData();
@@ -179,17 +176,21 @@ function Shop(props) {
 									<div className='row align-items-stretch'>
 										<div className='col-lg-6 p-lg-0'>
 											<img
+												alt=''
 												style={{ width: '100%' }}
 												className='product-view d-block h-100 bg-cover bg-center'
 												src={value.img1}
 												data-lightbox={`product_${value._id}`}
 											/>
-											<img className='d-none' href={value.img2} />
-											<img className='d-none' href={value.img3} />
+												
+											<img className='d-none' alt='' href={value.img2} />
+												
+											<img className='d-none' alt=''  href={value.img3} />
 										</div>
 										<div className='col-lg-6'>
 											{/* Để tắt modal phải có class="close" và data-dissmiss="modal" và aria-label="Close" */}
 											<a
+												alt=''												
 												className='close p-4'
 												type='button'
 												href='#section_product'

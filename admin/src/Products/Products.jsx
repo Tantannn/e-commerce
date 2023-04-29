@@ -4,6 +4,7 @@ import Pagination from "./Component/Pagination";
 
 function Products(props) {
   const [products, setProducts] = useState([]);
+  const [textChange, setTextChange] = useState([]);
 
   const [pagination, setPagination] = useState({
     page: "1",
@@ -12,10 +13,9 @@ function Products(props) {
     category: "all",
   });
 
-
   const onChangeText = (e) => {
     const value = e.target.value;
-
+    setTextChange(value);
     setPagination({
       page: pagination.page,
       count: pagination.count,
@@ -70,6 +70,14 @@ function Products(props) {
       console.log(error);
     }
   };
+  const SearchHandler = (e) => {
+    setTextChange(e.target.value);
+    console.log('Apple iPhone 11 64GB'.toUpperCase().search(textChange.toUpperCase()));
+    const result = products.filter((product) =>
+      product.name.toUpperCase().search(textChange.toUpperCase() )> -1
+    );
+    setProducts(result)
+  };
 
   return (
     <div className="page-wrapper">
@@ -111,6 +119,13 @@ function Products(props) {
                   type="text"
                   placeholder="Enter Search!"
                 />
+                <button
+                  className="float"
+                  value={textChange}
+                  onClick={SearchHandler}
+                >
+                  Search
+                </button>
                 <br />
                 <div className="table-responsive">
                   <table className="table table-striped table-bordered no-wrap">

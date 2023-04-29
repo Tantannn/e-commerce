@@ -7,22 +7,25 @@ import productsRouter from "./routes/products.js"
 import transactionsRouter from "./routes/transactions.js"
 import historyRouter from "./routes/history.js"
 import cors from 'cors'
-dotenv.config()
+import cookieParser from "cookie-parser";
+
 
 const app = express()
+dotenv.config()
 const port = process.env.PORT || 5000
 const corsOptions = {
     //To allow requests from client
     origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "http://127.0.0.1",
-      "http://104.142.122.231",
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1",
+        "http://104.142.122.231",
+        'https://e-commerce-qsq9.onrender.com/api'
     ],
     credentials: true,
     exposedHeaders: ["set-cookie"],
 };
-  
+
 const connect = async () => {
     try {
         await mongoose.connect(process.env.MONGO);
@@ -38,6 +41,8 @@ mongoose.connection.on('connected', () => {
 })
 app.use(cors(corsOptions))
 app.use(express.json());
+app.use(cookieParser())
+
 
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)

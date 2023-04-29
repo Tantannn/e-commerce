@@ -30,7 +30,6 @@ export const login = async (req, res, next) => {
       { id: user._id, isAdmin: user.isAdmin },
       process.env.JWT
     );
-
     const { password, isAdmin, ...otherDetails } = user._doc;
     res
       .cookie("access_token", token, {

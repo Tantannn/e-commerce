@@ -3,7 +3,7 @@ import axiosClient from './axiosClient';
 const ChatRoomsAPI = {
 	getMessageByRoomId: (roomId) => {
 		const url = `/chatrooms/getById?roomId=${roomId}`;
-		return axiosClient.get(url);
+		retuxiosClient.get(url);
 	},
 
 	createNewRoom: () => {

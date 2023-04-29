@@ -15,7 +15,6 @@ function SignIn(props) {
 
   const [password, setPassword] = useState("");
 
-  const [user, setUser] = useState([]);
 
   const [errorEmail, setErrorEmail] = useState(false);
   const [emailRegex, setEmailRegex] = useState(false);
@@ -62,9 +61,9 @@ function SignIn(props) {
             setErrorEmail(false);
 
             setErrorPassword(false);
-            localStorage.setItem("id_user", findUser.details._id);
+            localStorage.setItem("id_user", findUser._id);
 
-            localStorage.setItem("name_user", findUser.details.username);
+            localStorage.setItem("name_user", findUser.username);
             const idUser = localStorage.getItem("id_user");
             dispatch(addSession(idUser));
 
@@ -99,7 +98,7 @@ function SignIn(props) {
     };
 
     fetchData();
-  }, [checkPush]);
+  }, [listCart,checkPush]);
 
   function validateEmail(email) {
     const re =
