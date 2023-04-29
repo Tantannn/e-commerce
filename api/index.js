@@ -15,12 +15,13 @@ dotenv.config()
 const port = process.env.PORT || 5000
 const corsOptions = {
     //To allow requests from client
-    origin: [
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://127.0.0.1",
-        "http://104.142.122.231",
-    ],
+    // origin: [
+    //     "http://localhost:3000",
+    //     "http://localhost:3001",
+    //     "http://127.0.0.1",
+    //     "http://104.142.122.231",
+    //     "https://e-commerce-bunnyy.netlify.app/"
+    // ],
     credentials: true,
     exposedHeaders: ["set-cookie"],
 };
