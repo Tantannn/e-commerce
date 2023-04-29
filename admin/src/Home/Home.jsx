@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import HistoryAPI from '../API/HistoryAPI';
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 Home.propTypes = {};
@@ -8,11 +7,14 @@ Home.propTypes = {};
 function Home(props) {
 	const [history, setHistory] = useState([]);
 
-	useEffect(async () => {
+	useEffect(() =>{
+		const getAllHistory = async () => {
 		const response = await HistoryAPI.getAll();
 		setHistory(response);
+	}
+	getAllHistory()
 	}, []);
-
+	console.log(history);
 	return (
 		<div className='page-wrapper'>
 			<div className='page-breadcrumb'>
@@ -243,10 +245,10 @@ function Home(props) {
 												history.map((value) => (
 													<tr key={value._id}>
 														<td>{value.idUser}</td>
-														<td>{value.fullname}</td>
+														<td>{value.username}</td>
 														<td>{value.phone}</td>
 														<td>{value.address}</td>
-														<td>{value.total}</td>
+														<td>{value.priceProduct}</td>
 														<td>
 															{value.delivery
 																? 'Đã Vận Chuyển'
@@ -263,6 +265,7 @@ function Home(props) {
 																	cursor: 'pointer',
 																	color: 'white',
 																}}
+																href='/#'
 																className='btn btn-success'>
 																View
 															</a>

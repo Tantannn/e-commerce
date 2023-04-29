@@ -6,9 +6,9 @@ import { getAllHistory, getHistory, updateHistory, deleteHistory, createHistory 
 //CREATE
 router.post('/', createHistory)
 //UPDATE
-router.put('/:id',verifyAdmin,updateHistory)
+router.put('/:id',updateHistory)
 //DELETE
-router.delete('/:id',verifyAdmin, deleteHistory)
+router.delete('/:id', deleteHistory)
 //GET
 router.get('/find/:id', getHistory)
 router.get('/', getAllHistory)

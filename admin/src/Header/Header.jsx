@@ -1,17 +1,17 @@
 import React from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import Logoicon from '../Image/logo-icon.png';
-import Logotext from '../Image/logo-text.png';
-import Logolight from '../Image/logo-light-text.png';
+import { Link, useNavigate } from "react-router-dom";
+
 
 function Header(props) {
 	const { user } = useContext(AuthContext);
-	const { loading, error, dispatch } = useContext(AuthContext);
-
+	const {  dispatch } = useContext(AuthContext);
+	const navigate = useNavigate()
 	const handleLogout = () => {
-		dispatch("LOGOUT");
+		dispatch("LOG_OUT");
+		localStorage.clear()
+		navigate('/login')
 	}
 
 	return (
@@ -20,7 +20,7 @@ function Header(props) {
 				<div className='navbar-header' data-logobg='skin6'>
 					<a
 						className='nav-toggler waves-effect waves-light d-block d-md-none'
-						href='#'>
+						href='/#'>
 						<i className='ti-menu ti-close'></i>
 					</a>
 					<div className='navbar-brand'>
@@ -54,7 +54,7 @@ function Header(props) {
 					</div>
 					{/* <a
 						className='topbartoggler d-block d-md-none waves-effect waves-light'
-						href='#'
+						href='/#'
 						data-toggle='collapse'
 						data-target='#navbarSupportedContent'
 						aria-controls='navbarSupportedContent'
@@ -70,7 +70,7 @@ function Header(props) {
 						<li className='nav-item dropdown'>
 							{/* <a
 								className='nav-link dropdown-toggle'
-								href='#'
+								href='/#'
 								id='navbarDropdown'
 								role='button'
 								data-toggle='dropdown'
@@ -81,14 +81,14 @@ function Header(props) {
 							<div
 								className='dropdown-menu'
 								aria-labelledby='navbarDropdown'>
-								<a className='dropdown-item' href='#'>
+								<a className='dropdown-item' href='/#'>
 									Action
 								</a>
-								<a className='dropdown-item' href='#'>
+								<a className='dropdown-item' href='/#'>
 									Another action
 								</a>
 								<div className='dropdown-divider'></div>
-								<a className='dropdown-item' href='#'>
+								<a className='dropdown-item' href='/#'>
 									Something else here
 								</a>
 							</div>
@@ -98,9 +98,9 @@ function Header(props) {
 						<li className='nav-item dropdown'>
 							<a
 								className='nav-link dropdown-toggle'
-								href='#'
+								href='/#'
 								data-toggle='dropdown'
-								aria-haspopup='true'
+								// aria-haspopup='true'
 								aria-expanded='false'>
 								{/* <img
 									src='../assets/images/users/IMG_6225.jpg'
@@ -117,7 +117,7 @@ function Header(props) {
 								</span>
 							</a>
 							<div className='dropdown-menu dropdown-menu-right user-dd animated flipInY'>
-								<a className='dropdown-item' onClick={handleLogout}>
+								<a className='dropdown-item' href='/#' onClick={handleLogout}>
 									<i
 										data-feather='power'
 										className='svg-icon mr-2 ml-1'></i>

@@ -19,6 +19,14 @@ const ProductAPI = {
 		const url = `/products/pagination${query}`;
 		return axiosClient.get(url);
 	},
+	deleteProduct: (params) => {
+		const url = `/products/${params}`
+		return axiosClient.delete(url)
+	},
+	updateProduct: (params) => {
+		const url = `/products/${params}`
+		return axiosClient.put(url)
+	}
 };
 
 export default ProductAPI;

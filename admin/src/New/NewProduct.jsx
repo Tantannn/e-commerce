@@ -1,4 +1,7 @@
 const NewProduct = () => {
+	const handleChange = (e) => {
+		console.log(e.target.value);
+	}
 	return (
 		<div className='page-wrapper'>
 			<div className='page-breadcrumb'>
@@ -10,6 +13,7 @@ const NewProduct = () => {
 								type='text'
 								className='form-control'
 								placeholder='Enter Product Name'
+								onChange={handleChange}
 							/>
 						</div>
 						<div className='form-group'>
@@ -18,6 +22,7 @@ const NewProduct = () => {
 								type='text'
 								className='form-control'
 								placeholder='Enter Category'
+								onChange={handleChange}
 							/>
 						</div>
 						<div class='form-group'>
@@ -25,14 +30,14 @@ const NewProduct = () => {
 							<textarea
 								class='form-control'
 								rows='3'
-								placeholder='Enter Short Description'></textarea>
+								placeholder='Enter Short Description' onChange={handleChange}></textarea>
 						</div>
 						<div class='form-group'>
 							<label>Long Description</label>
 							<textarea
 								class='form-control'
 								rows='6'
-								placeholder='Enter Long Description'></textarea>
+								placeholder='Enter Long Description' onChange={handleChange}></textarea>
 						</div>
 						<div class='form-group'>
 							<label for='exampleFormControlFile1'>

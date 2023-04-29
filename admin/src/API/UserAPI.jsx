@@ -11,10 +11,11 @@ const UserAPI = {
 		return axiosClient.get(url);
 	},
 
-	postSignUp: (query) => {
-		const url = `/users/signup/${query}`;
-		return axiosClient.post(url);
+	postLogin: (input) => {
+		const url = '/auth/login';
+		return axiosClient.post(url, input,  { withCredentials: true });
 	},
+
 };
 
 export default UserAPI;

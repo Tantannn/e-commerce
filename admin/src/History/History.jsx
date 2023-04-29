@@ -93,10 +93,10 @@ function History(props) {
 												history.map((value) => (
 													<tr key={value._id}>
 														<td>{value.idUser}</td>
-														<td>{value.fullname}</td>
+														<td>{value.username}</td>
 														<td>{value.phone}</td>
 														<td>{value.address}</td>
-														<td>{value.total}</td>
+														<td>{value.priceProduct}</td>
 														<td>
 															{value.delivery
 																? 'Đã Vận Chuyển'

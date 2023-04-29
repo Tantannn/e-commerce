@@ -47,14 +47,7 @@ function Menu(props) {
 							</a>
 							<ul
 								aria-expanded='false'
-								className='collapse  first-level base-level-line'>
-								<li className='sidebar-item'>
-									<a href='/users' className='sidebar-link'>
-										<span className='hide-menu'>
-											Users
-										</span>
-									</a>
-								</li>
+								className='collapse  first-level base-level-line'>		
 								<li className='sidebar-item'>
 									<a href='/products' className='sidebar-link'>
 										<span className='hide-menu'>

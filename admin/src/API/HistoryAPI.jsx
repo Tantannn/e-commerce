@@ -12,8 +12,8 @@ const HistoryAPI = {
 	},
 
 	getAll: () => {
-		const url = '/history/all';
-		return axiosClient.get(url);
+		const url = '/history';
+		return axiosClient.get(url,{ withCredentials: true });
 	},
 };
 
