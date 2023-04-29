@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import convertMoney from '../../convertMoney';
@@ -172,6 +171,7 @@ function ListCart(props) {
 								</td>
 								<td className='align-middle border-0'>
 									<a
+										href='/#'
 										className='reset-anchor remove_cart'
 										style={{ cursor: 'pointer' }}
 										onClick={() =>

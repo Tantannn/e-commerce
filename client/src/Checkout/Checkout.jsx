@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import queryString from "query-string";
 import CartAPI from "../API/CartAPI";
 import CheckoutAPI from "../API/CheckoutAPI";
 import convertMoney from "../convertMoney";
@@ -56,10 +55,10 @@ function Checkout(props) {
   function getTotal(carts) {
     let sub_total = 0;
 
-    const sum_total = carts.map((value) => {
-      return (sub_total +=
-        parseInt(value.priceProduct) * parseInt(value.count));
-    });
+    // const sum_total = carts.map((value) => {
+    //   return (sub_total +=
+    //     parseInt(value.priceProduct) * parseInt(value.count));
+    // });
 
     setTotal(sub_total);
   }
@@ -124,23 +123,23 @@ function Checkout(props) {
 
   //Hàm này bắt đầu gửi Email xác nhận đơn hàng
   useEffect(() => {
-    if (load) {
-      const sendMail = async () => {
-        const params = {
-          email: email,
-          username: fullname,
-          phone: phone,
-          address: address,
-          idUser: localStorage.getItem("id_user"),
-        };
-
-        try {
-          const response = await CheckoutAPI.postEmail(params);
-          console.log(response);
-        } catch (error) {
-          console.log(error);
-        }
+    const sendMail = async () => {
+      const params = {
+        email: email,
+        username: fullname,
+        phone: phone,
+        address: address,
+        idUser: localStorage.getItem("id_user"),
       };
+
+      try {
+        const response = await CheckoutAPI.postEmail(params);
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if (load) {
 
       sendMail();
 
@@ -156,7 +155,7 @@ function Checkout(props) {
         setLoad(!load);
       }, 4000);
     }
-  }, [load]);
+  }, [load,email,address,fullname,phone,success]);
 
   const onChangeName = (e) => {
     setFullname(e.target.value);
@@ -308,6 +307,7 @@ function Checkout(props) {
                     </div>
                     <div className="col-lg-12 form-group">
                       <a
+                        href="/#"
                         className="btn btn-dark"
                         style={{ color: "white" }}
                         type="submit"

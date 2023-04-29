@@ -21,7 +21,7 @@ function Detail(props) {
   const id_user = useSelector((state) => state.Cart.id_user);
 
   //listCart được lấy từ redux
-  const listCart = useSelector((state) => state.Cart.listCart);
+  // const listCart = useSelector((state) => state.Cart.listCart);
 
   const [product, setProduct] = useState([]);
 
@@ -63,9 +63,9 @@ function Detail(props) {
   };
 
   // Hàm thay đổi comment
-  const onChangeComment = (e) => {
-    setComment(e.target.value);
-  };
+  // const onChangeComment = (e) => {
+  //   setComment(e.target.value);
+  // };
 
   // Hàm này dùng để bình luận
   const handlerComment = () => {

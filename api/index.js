@@ -20,7 +20,6 @@ const corsOptions = {
         "http://localhost:3001",
         "http://127.0.0.1",
         "http://104.142.122.231",
-        'https://e-commerce-qsq9.onrender.com/api'
     ],
     credentials: true,
     exposedHeaders: ["set-cookie"],

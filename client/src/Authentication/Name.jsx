@@ -19,11 +19,11 @@ function Name(props) {
 	return (
 		<li className='nav-item dropdown'>
 			<a
+				href='/#'
 				className='nav-link dropdown-toggle'
 				style={{ cursor: 'pointer' }}
 				id='pagesDropdown'
 				data-toggle='dropdown'
-				aria-haspopup='true'
 				aria-expanded='false'>
 				<i className='fas fa-user-alt mr-1 text-gray'></i>
 				{name.fullname}

@@ -9,8 +9,6 @@ import queryString from 'query-string';
 import convertMoney from '../convertMoney';
 
 function Cart(props) {
-	//id_user được lấy từ redux
-	const id_user = useSelector((state) => state.Cart.id_user);
 
 	//listCart được lấy từ redux
 	const listCart = useSelector((state) => state.Cart.listCart);
@@ -42,16 +40,16 @@ function Cart(props) {
 		};
 
 		fetchDataRedux();
-	}, [loadRedux]);
+	}, [loadRedux,listCart]);
 
 	//Hàm này dùng để tính tổng tiền carts
 	function getTotal(carts) {
 		let sub_total = 0;
 
-		const sum_total = carts.map((value) => {
-			return (sub_total +=
-				parseInt(value.priceProduct) * parseInt(value.count));
-		});
+		// const sum_total = carts.map((value) => {
+		// 	return (sub_total +=
+		// 		parseInt(value.priceProduct) * parseInt(value.count));
+		// });
 
 		setTotal(sub_total);
 	}
@@ -83,13 +81,13 @@ function Cart(props) {
 
 			//Sau khi nhận được dữ liệu ở component con truyền lên thì sẽ gọi API xử lý dữ liệu
 			const fetchDelete = async () => {
-				const params = {
-					idUser: getUser,
-					idProduct: getProduct,
-				};
+			// 	const params = {
+			// 		idUser: getUser,
+			// 		idProduct: getProduct,
+			// 	};
 
-				const query = '?' + queryString.stringify(params);
-				const response = await CartAPI.deleteToCart(query);
+			// 	const query = '?' + queryString.stringify(params);
+			// 	const response = await CartAPI.deleteToCart(query);
 			};
 
 			fetchDelete();
