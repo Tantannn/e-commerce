@@ -67,15 +67,15 @@ function Home(props) {
 													</p>
 													<div className='row align-items-stretch mb-4'>
 														<div className='col-sm-5 pl-sm-0 fix_addwish'>
-															<a
+															<Link
 																className='btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0'
-																href={`/detail/${value._id}`}
+																to={`/detail/${value._id}`}
 																target='_blank'>
 																<i className='fa fa-shopping-cart'></i>
 																<span className='ml-2'>
 																	View Detail
 																</span>
-															</a>
+															</Link>
 														</div>
 													</div>
 												</div>
