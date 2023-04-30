@@ -12,5 +12,5 @@ router.put('/:id', updateTransaction)
 router.delete('', deleteTransaction)
 //GET
 router.get('/find/:id', getTransaction)
-router.get('/',verifyAdmin, getTransactions)
+router.get('/', getTransactions)
 export default router

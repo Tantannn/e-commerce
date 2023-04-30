@@ -5,8 +5,8 @@ import { getUsers, getUser, updateUser, deleteUser } from '../controllers/users.
 //UPDATE
 router.put('/:id', updateUser)
 //DELETE
-router.delete('/:id',verifyAdmin, deleteUser)
+router.delete('/:id', deleteUser)
 //GET
-router.get('/find/:id',verifyAdmin, getUser)
-router.get('/',verifyAdmin, getUsers)
+router.get('/find/:id', getUser)
+router.get('/', getUsers)
 export default router
