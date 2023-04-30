@@ -22,7 +22,9 @@ const corsOptions = {
         "http://104.142.122.231",
         "https://e-commerce-bunnyy.netlify.app",
         "https://644d38ad2155012d4b6b7f69--e-commerce-bunnyy.netlify.app",
-        "https://e-commerce-admin-bunny.netlify.app"
+        "https://e-commerce-admin-bunny.netlify.app",
+        "https://main--e-commerce-admin-bunny.netlify.app/login",
+        "https://644dd6f763bf6c0008ae4c0d--e-commerce-admin-bunny.netlify.app/login"
     ],
     credentials: true,
     exposedHeaders: ["set-cookie"],
