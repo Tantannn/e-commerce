@@ -1,5 +1,4 @@
 {
-  "homepage": "http://tantannn.github.io/e-commerce/admin",
   "name": "admin_shop",
   "version": "0.1.0",
   "private": true,
@@ -20,8 +19,6 @@
   },
   "scripts": {
     "start": "set PORT=3001 && react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
