@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Menu(props) {
 	return (
@@ -9,10 +9,10 @@ function Menu(props) {
 					<ul id='sidebarnav'>
 						<li className='sidebar-item'>
 							{' '}
-							<Link className='sidebar-link sidebar-link' to='/'>
+							<a className='sidebar-link sidebar-link' href='/'>
 								<i data-feather='home' className='feather-icon'></i>
 								<span className='hide-menu'>Dashboard</span>
-							</Link>
+							</a>
 						</li>
 						<li className='list-divider'></li>
 
@@ -21,76 +21,53 @@ function Menu(props) {
 						</li>
 						<li className='sidebar-item'>
 							{' '}
-							<Link className='sidebar-link sidebar-link' to='/new'>
+							<a className='sidebar-link sidebar-link' href='/new'>
 								<i
 									data-feather='settings'
 									className='feather-icon'></i>
 								<span className='hide-menu'>New Product</span>
-							</Link>
+							</a>
 						</li>
 						<li className='sidebar-item'>
 							{' '}
-							<Link className='sidebar-link sidebar-link' to='/chat'>
+							<a className='sidebar-link sidebar-link' href='/chat'>
 								<i
 									data-feather='message-square'
 									className='feather-icon'></i>
 								<span className='hide-menu'>Customer</span>
-							</Link>
+							</a>
 						</li>
 						<li className='sidebar-item'>
 							{' '}
-							<Link
+							<a
 								className='sidebar-link has-arrow'
-								to='#'
+								href='#'
 								aria-expanded='false'>
 								<i data-feather='grid' className='feather-icon'></i>
 								<span className='hide-menu'>Tables</span>
-							</Link>
+							</a>
 							<ul
 								aria-expanded='false'
 								className='collapse  first-level base-level-line'>		
 								<li className='sidebar-item'>
-									<Link to='/products' className='sidebar-link'>
+									<a href='/products' className='sidebar-link'>
 										<span className='hide-menu'>
 											Products
 										</span>
-									</Link>
+									</a>
 								</li>
 								<li className='sidebar-item'>
-									<Link to='/history' className='sidebar-link'>
+									<a href='/history' className='sidebar-link'>
 										<span className='hide-menu'>
 											History
 										</span>
-									</Link>
+									</a>
 								</li>
 							</ul>
 						</li>
 
 						<li className='list-divider'></li>
-						{/* <li className='nav-small-cap'>
-							<span className='hide-menu'>Authentication</span>
-						</li>
 
-						<li className='sidebar-item'>
-							{' '}
-							<a
-								className='sidebar-link sidebar-link'
-								to='authentication-login1.html'
-								aria-expanded='false'>
-								<i data-feather='lock' className='feather-icon'></i>
-								<span className='hide-menu'>Login</span>
-							</a>
-						</li>
-						<li className='sidebar-item'>
-							{' '}
-							<a
-								className='sidebar-link sidebar-link'
-								to='authentication-register1.html'
-								aria-expanded='false'>
-								<i data-feather='lock' className='feather-icon'></i>
-								<span className='hide-menu'>Register</span>
-							</a>
-						</li> */}
 					</ul>
 				</nav>
 			</div>

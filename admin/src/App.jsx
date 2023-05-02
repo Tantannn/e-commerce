@@ -37,9 +37,7 @@ function App() {
             data-boxed-layout="full"
           >
             <Header />
-
             <Menu />
-
             <Routes>
               <Route
                 exact
