@@ -110,6 +110,7 @@ function SignUp(props) {
 									if(response)
 									setSuccess(true);
 								} catch (error) {
+									alert('This email has been used!')
 									console.log(error);
 								}
 

@@ -15,7 +15,6 @@ function SignIn(props) {
 
   const [password, setPassword] = useState("");
 
-
   const [errorEmail, setErrorEmail] = useState(false);
   const [emailRegex, setEmailRegex] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
@@ -52,23 +51,30 @@ function SignIn(props) {
         } else {
           setEmailRegex(false);
 
-          const findUser = await UserAPI.postLogin({ email, password });
-          console.log(findUser);
-          if (!findUser) {
+          try {
+            const findUser = await UserAPI.postLogin({ email, password });
+            console.log(findUser);
+            if (!findUser) {
+              setErrorEmail(true);
+              return;
+            } else {
+              setErrorEmail(false);
+  
+              setErrorPassword(false);
+              localStorage.setItem("id_user", findUser._id);
+  
+              localStorage.setItem("name_user", findUser.username);
+              const idUser = localStorage.getItem("id_user");
+              dispatch(addSession(idUser));
+  
+              setCheckPush(true);
+            }
+          } catch (error) {
             setErrorEmail(true);
-            return;
-          } else {
-            setErrorEmail(false);
 
-            setErrorPassword(false);
-            localStorage.setItem("id_user", findUser._id);
-
-            localStorage.setItem("name_user", findUser.username);
-            const idUser = localStorage.getItem("id_user");
-            dispatch(addSession(idUser));
-
-            setCheckPush(true);
+            console.log(error);
           }
+
         }
       }
     }
@@ -98,7 +104,7 @@ function SignIn(props) {
     };
 
     fetchData();
-  }, [listCart,checkPush]);
+  }, [listCart, checkPush]);
 
   function validateEmail(email) {
     const re =

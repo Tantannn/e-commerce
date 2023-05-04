@@ -4,7 +4,7 @@ import HistoryAPI from "../../API/HistoryAPI";
 
 function DetailHistory(props) {
   const { id } = useParams();
-
+  console.log('dasd')
   const [cart, setCart] = useState([]);
 
   const [information, setInformation] = useState({});
@@ -13,7 +13,6 @@ function DetailHistory(props) {
     const fetchData = async () => {
       const response = await HistoryAPI.getHistoryAPI(id);
       console.log(response);
-
       setCart(response);
       setInformation(response);
     };
@@ -44,11 +43,11 @@ function DetailHistory(props) {
         {information && (
           <>
             <h1 className="h2 text-uppercase">Information Order</h1>
-            <p>ID User: {information[0].idUser}</p>
-            <p>Full Name: {information[0].username}</p>
-            <p>Phone: {information[0].phone}</p>
-            <p>Address: {information[0].address}</p>
-            <p>Total: {information[0].priceProduct}$</p>
+            <p>ID User: {information[0]?.idUser}</p>
+            <p>Full Name: {information[0]?.username}</p>
+            <p>Phone: {information[0]?.phone}</p>
+            <p>Address: {information[0]?.address}</p>
+            <p>Total: {information[0]?.priceProduct}$</p>
           </>
         )}
       </div>
@@ -83,8 +82,8 @@ function DetailHistory(props) {
           </thead>
           <tbody>
             {cart &&
-              cart.map((value) => (
-                <tr className="text-center" key={value.idProduct}>
+              cart.map((value,i) => (
+                <tr className="text-center" key={i}>
                   <td className="align-middle border-0">
                     <h6 className="mb-0">{value.idProduct}</h6>
                   </td>

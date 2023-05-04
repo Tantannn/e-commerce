@@ -50,9 +50,9 @@ function Products(props) {
 							</div>
 							<h6>
 								{' '}
-								<a className='reset-anchor' href='detail.html'>
+								<Link className='reset-anchor' to='detail.html'>
 									{value.name}
-								</a>
+								</Link>
 							</h6>
 							<p className='small text-muted'>
 								{convertMoney(value.price)} VND

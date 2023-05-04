@@ -55,12 +55,12 @@ function Checkout(props) {
   function getTotal(carts) {
     let sub_total = 0;
 
-    // const sum_total = carts.map((value) => {
-    //   return (sub_total +=
-    //     parseInt(value.priceProduct) * parseInt(value.count));
-    // });
+    const sum_total = carts.map((value) => {
+      return (sub_total +=
+        parseInt(value.priceProduct) * parseInt(value.count));
+    });
 
-    setTotal(sub_total);
+    setTotal(sum_total);
   }
 
   //Check Validation

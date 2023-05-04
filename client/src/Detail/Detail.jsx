@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductAPI from "../API/ProductAPI";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import alertify from "alertifyjs";
 import { addCart } from "../Redux/Action/ActionCart";
@@ -11,7 +11,6 @@ import convertMoney from "../convertMoney";
 
 function Detail(props) {
   const [detail, setDetail] = useState({});
-
   const dispatch = useDispatch();
 
   //id params cho từng sản phẩm
