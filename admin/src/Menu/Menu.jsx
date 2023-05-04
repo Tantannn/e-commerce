@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-
+import { Link, Navigate, useNavigate } from "react-router-dom";
 function Menu(props) {
+	let navigate = useNavigate();
+
 	return (
 		<aside className='left-sidebar' data-sidebarbg='skin6'>
 			<div className='scroll-sidebar' data-sidebarbg='skin6'>
@@ -9,10 +10,12 @@ function Menu(props) {
 					<ul id='sidebarnav'>
 						<li className='sidebar-item'>
 							{' '}
-							<a className='sidebar-link sidebar-link' href='/'>
-								<i data-feather='home' className='feather-icon'></i>
-								<span className='hide-menu'>Dashboard</span>
-							</a>
+							<Link to='/'>
+								<p className='sidebar-link sidebar-link'>
+									<i data-feather='home' className='feather-icon'></i>
+									<span className='hide-menu'>Dashboard</span>
+								</p>
+							</Link>
 						</li>
 						<li className='list-divider'></li>
 
@@ -21,47 +24,54 @@ function Menu(props) {
 						</li>
 						<li className='sidebar-item'>
 							{' '}
-							<a className='sidebar-link sidebar-link' href='/new'>
-								<i
-									data-feather='settings'
-									className='feather-icon'></i>
-								<span className='hide-menu'>New Product</span>
-							</a>
+							<Link to='/new'>
+								<p className='sidebar-link sidebar-link' >
+									<i
+										data-feather='settings'
+										className='feather-icon'></i>
+									<span className='hide-menu'>New Product</span>
+								</p>
+							</Link>
 						</li>
 						<li className='sidebar-item'>
 							{' '}
-							<a className='sidebar-link sidebar-link' href='/chat'>
-								<i
-									data-feather='message-square'
-									className='feather-icon'></i>
-								<span className='hide-menu'>Customer</span>
-							</a>
+							<Link to='/chat'>
+								<p className='sidebar-link sidebar-link' >
+									<i
+										data-feather='message-square'
+										className='feather-icon'></i>
+									<span className='hide-menu'>Customer</span>
+								</p>
+							</Link>
 						</li>
 						<li className='sidebar-item'>
 							{' '}
 							<a
 								className='sidebar-link has-arrow'
-								href='#'
+								href='/#'
 								aria-expanded='false'>
 								<i data-feather='grid' className='feather-icon'></i>
 								<span className='hide-menu'>Tables</span>
 							</a>
 							<ul
-								aria-expanded='false'
 								className='collapse  first-level base-level-line'>		
 								<li className='sidebar-item'>
-									<a href='/products' className='sidebar-link'>
-										<span className='hide-menu'>
-											Products
-										</span>
-									</a>
+									<Link to='/products'>
+										<p className='sidebar-link'>
+											<span className='hide-menu'>
+												Products
+											</span>
+										</p>
+									</Link>
 								</li>
 								<li className='sidebar-item'>
-									<a href='/history' className='sidebar-link'>
-										<span className='hide-menu'>
-											History
-										</span>
-									</a>
+									<Link to='/history'>
+										<p  className='sidebar-link'>
+											<span className='hide-menu'>
+												History
+											</span>
+										</p>
+									</Link>
 								</li>
 							</ul>
 						</li>

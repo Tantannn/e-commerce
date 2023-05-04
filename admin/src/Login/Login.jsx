@@ -40,11 +40,11 @@ const Login = () => {
   };
 
   return (
-    <div className="page-wrapper">
+    <div className=""> 
       <div className="page-breadcrumb">
         <div className="row">
-          <div class="login">
-            <div class="heading">
+          <div className="login">
+            <div className="heading">
               <h2>Sign in</h2>
               <form action="#">
                 <div className="input-group input-group-lg">
@@ -69,6 +69,7 @@ const Login = () => {
                     className="form-control"
                     placeholder="Password"
                     value={password}
+                    autoComplete="on"
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>

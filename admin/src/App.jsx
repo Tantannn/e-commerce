@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate, Link, BrowserRouter } from "react-router-dom";
 import Chat from "./Chat/Chat";
 import Header from "./Header/Header";
 import History from "./History/History";
@@ -22,25 +22,28 @@ function App() {
     if (!user) return <Navigate to="/login" />;
     return children;
   };
+
   return (
     <div className="App">
-      <AuthContextProvider>
-        <BrowserRouter>
-          <div
-            id="main-wrapper"
-            data-theme="light"
-            data-layout="vertical"
-            data-navbarbg="skin6"
-            data-sidebartype="full"
-            data-sidebar-position="fixed"
-            data-header-position="fixed"
-            data-boxed-layout="full"
-          >
+      <div
+        id="main-wrapper"
+        data-theme="light"
+        data-layout="vertical"
+        data-navbarbg="skin6"
+        data-sidebartype="full"
+        data-sidebar-position="fixed"
+        data-header-position="fixed"
+        data-boxed-layout="full"
+      >
+        <AuthContextProvider>
+          <BrowserRouter>
             <Header />
             <Menu />
+         
             <Routes>
+  
               <Route
-                exact
+                
                 path="/"
                 element={
                   <AdminProtectedRoute>
@@ -60,11 +63,10 @@ function App() {
               <Route
                 path="/products"
                 element={
-                  <AdminProtectedRoute>
                     <Products />
-                  </AdminProtectedRoute>
                 }
               />
+                <Route path="/login" element={<Login />} />
               <Route
                 path="/history"
                 element={
@@ -73,7 +75,6 @@ function App() {
                   </AdminProtectedRoute>
                 }
               />
-              <Route path="/login" element={<Login />} />
               <Route
                 path="/new"
                 element={
@@ -83,9 +84,9 @@ function App() {
                 }
               />
             </Routes>
-          </div>
-        </BrowserRouter>
-      </AuthContextProvider>
+          </BrowserRouter>
+        </AuthContextProvider>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,11 @@
+import './NewProduct.css'
 const NewProduct = () => {
 	const handleChange = (e) => {
 		console.log(e.target.value);
 	}
+
 	return (
-		<div className='page-wrapper'>
+		<div className='mar'>
 			<div className='page-breadcrumb'>
 				<div className='row'>
 					<form style={{ width: '50%', marginLeft: '40px' }}>

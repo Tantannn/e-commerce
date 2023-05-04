@@ -35,7 +35,7 @@ function History(props) {
 	}, []);
 
 	return (
-		<div className='page-wrapper'>
+		<div className='mar'>
 			<div className='page-breadcrumb'>
 				<div className='row'>
 					<div className='col-7 align-self-center'>

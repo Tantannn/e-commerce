@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductAPI from "../API/ProductAPI";
 import Pagination from "./Component/Pagination";
 
-function Products(props) {
+function Products() {
   const [products, setProducts] = useState([]);
   const [textChange, setTextChange] = useState([]);
 
@@ -71,6 +71,7 @@ function Products(props) {
     }
   };
   const SearchHandler = (e) => {
+    if(e.target.value)
     setTextChange(e.target.value);
     console.log('Apple iPhone 11 64GB'.toUpperCase().search(textChange.toUpperCase()));
     const result = products.filter((product) =>
@@ -80,7 +81,7 @@ function Products(props) {
   };
 
   return (
-    <div className="page-wrapper">
+    <div className="mar">
       <div className="page-breadcrumb">
         <div className="row">
           <div className="col-7 align-self-center">
