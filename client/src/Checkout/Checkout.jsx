@@ -155,7 +155,7 @@ function Checkout(props) {
         setLoad(!load);
       }, 4000);
     }
-  }, [load,email,address,fullname,phone,success]);
+  }, [load]);
 
   const onChangeName = (e) => {
     setFullname(e.target.value);

@@ -84,7 +84,7 @@ function Shop(props) {
 
 			// Nếu mà category === 'all' thì nó sẽ gọi hàm get tất cả sản phẩm
 			// Ngược lại thì nó sẽ gọi hàm pagination và phân loại sản phẩm
-			if (pagination.category === 'all') {
+			if (pagination.category === 'all' || !pagination.category ) {
 				response = await ProductAPI.getAPI();
 				setProducts(response);
 			} else {
@@ -136,7 +136,6 @@ function Shop(props) {
 
 		fetchData();
 	}, [pagination]);
-	console.log(products);
 
 	return (
 		<div className='container'>

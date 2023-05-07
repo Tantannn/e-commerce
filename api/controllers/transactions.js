@@ -54,7 +54,7 @@ export const postOrder = async (req, res, next) => {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-            user: 'coy.welch@ethereal.email',
+            user: 'coy.welch@ethereal.email', //test email
             pass: 'BJXTEMJvssmJ1HUHQW'
         }
     });

@@ -3571,9 +3571,7 @@ code {
 	}
 }
 
-.modal-backdrop.show {
-	opacity: 0.7;
-}
+
 
 /*
  * 12. BREADCRUMB

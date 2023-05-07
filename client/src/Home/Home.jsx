@@ -20,7 +20,6 @@ function Home(props) {
 
 		fetchData();
 	}, []);
-
 	return (
 		<div className='page-holder'>
 			<header className='header bg-white'>
@@ -67,14 +66,17 @@ function Home(props) {
 													</p>
 													<div className='row align-items-stretch mb-4'>
 														<div className='col-sm-5 pl-sm-0 fix_addwish'>
-															<Link
-																className='btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0'
-																to={`/detail/${value._id}`}
-																target='_blank'>
-																<i className='fa fa-shopping-cart'></i>
-																<span className='ml-2'>
-																	View Detail
-																</span>
+															<Link to={`/detail/${value._id}`}  target="_parent">
+																<p
+																	className='btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0 close '																	
+																	target='_blank'
+																	aria-label="Close"									
+																>
+																	<i className='fa fa-shopping-cart'></i>
+																	<span className='ml-2'>
+																		View Detail
+																	</span>
+																</p>
 															</Link>
 														</div>
 													</div>
