@@ -188,6 +188,7 @@ function Cart(props) {
 		if (!localStorage.getItem('id_user')) {
 			alertify.set('notifier', 'position', 'bottom-left');
 			alertify.error('Vui Lòng Kiểm Tra Lại Đăng Nhập!');
+			alert('Vui Lòng Kiểm Tra Lại Đăng Nhập!');
 			return;
 		}
 
