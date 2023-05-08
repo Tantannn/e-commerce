@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/e-commerce/static/css/main.ca3266bc.chunk.css",
-    "main.js": "/e-commerce/static/js/main.e3133675.chunk.js",
-    "main.js.map": "/e-commerce/static/js/main.e3133675.chunk.js.map",
-    "runtime-main.js": "/e-commerce/static/js/runtime-main.a8189b99.js",
-    "runtime-main.js.map": "/e-commerce/static/js/runtime-main.a8189b99.js.map",
-    "static/js/2.fc750d99.chunk.js": "/e-commerce/static/js/2.fc750d99.chunk.js",
-    "static/js/2.fc750d99.chunk.js.map": "/e-commerce/static/js/2.fc750d99.chunk.js.map",
-    "static/js/3.613ec494.chunk.js": "/e-commerce/static/js/3.613ec494.chunk.js",
-    "static/js/3.613ec494.chunk.js.map": "/e-commerce/static/js/3.613ec494.chunk.js.map",
-    "index.html": "/e-commerce/index.html",
-    "static/css/main.ca3266bc.chunk.css.map": "/e-commerce/static/css/main.ca3266bc.chunk.css.map",
-    "static/js/2.fc750d99.chunk.js.LICENSE.txt": "/e-commerce/static/js/2.fc750d99.chunk.js.LICENSE.txt",
-    "static/media/Auth.css": "/e-commerce/static/media/banner1.4a22881c.jpg",
-    "static/media/product_1.b24c110a.png": "/e-commerce/static/media/product_1.b24c110a.png",
-    "static/media/product_2.1bc52f89.png": "/e-commerce/static/media/product_2.1bc52f89.png",
-    "static/media/product_3.48eda529.png": "/e-commerce/static/media/product_3.48eda529.png",
-    "static/media/product_4.6d83c600.png": "/e-commerce/static/media/product_4.6d83c600.png",
-    "static/media/product_5.b963def7.png": "/e-commerce/static/media/product_5.b963def7.png"
+    "main.css": "/static/css/main.c9f19828.chunk.css",
+    "main.js": "/static/js/main.652d005f.chunk.js",
+    "main.js.map": "/static/js/main.652d005f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bbd33f54.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bbd33f54.js.map",
+    "static/js/2.e2b3ac41.chunk.js": "/static/js/2.e2b3ac41.chunk.js",
+    "static/js/2.e2b3ac41.chunk.js.map": "/static/js/2.e2b3ac41.chunk.js.map",
+    "static/js/3.613ec494.chunk.js": "/static/js/3.613ec494.chunk.js",
+    "static/js/3.613ec494.chunk.js.map": "/static/js/3.613ec494.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.c9f19828.chunk.css.map": "/static/css/main.c9f19828.chunk.css.map",
+    "static/js/2.e2b3ac41.chunk.js.LICENSE.txt": "/static/js/2.e2b3ac41.chunk.js.LICENSE.txt",
+    "static/media/Auth.css": "/static/media/banner1.4a22881c.jpg",
+    "static/media/product_1.b24c110a.png": "/static/media/product_1.b24c110a.png",
+    "static/media/product_2.1bc52f89.png": "/static/media/product_2.1bc52f89.png",
+    "static/media/product_3.48eda529.png": "/static/media/product_3.48eda529.png",
+    "static/media/product_4.6d83c600.png": "/static/media/product_4.6d83c600.png",
+    "static/media/product_5.b963def7.png": "/static/media/product_5.b963def7.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a8189b99.js",
-    "static/js/2.fc750d99.chunk.js",
-    "static/css/main.ca3266bc.chunk.css",
-    "static/js/main.e3133675.chunk.js"
+    "static/js/runtime-main.bbd33f54.js",
+    "static/js/2.e2b3ac41.chunk.js",
+    "static/css/main.c9f19828.chunk.css",
+    "static/js/main.652d005f.chunk.js"
   ]
 }
