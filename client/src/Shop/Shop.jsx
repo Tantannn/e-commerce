@@ -42,6 +42,7 @@ function Shop(props) {
 	const handlerChangePage = (value) => {
 		console.log('Value: ', value);
 
+		
 		//Sau đó set lại cái pagination để gọi chạy làm useEffect gọi lại API pagination
 		setPagination({
 			page: value,
@@ -55,7 +56,6 @@ function Shop(props) {
 	//Hàm này sẽ truyền xuống Component con và nhận dữ liệu từ Component con truyền lên
 	const handlerSearch = (value) => {
 		console.log('Value: ', value);
-
 		setPagination({
 			page: pagination.page,
 			count: pagination.count,
@@ -64,17 +64,7 @@ function Shop(props) {
 		});
 	};
 
-	//Hàm này dùng để thay đổi state pagination.category
-	const handlerCategory = (value) => {
-		console.log('Value: ', value);
 
-		setPagination({
-			page: pagination.page,
-			count: pagination.count,
-			search: pagination.search,
-			category: value,
-		});
-	};
 
 	//Gọi hàm useEffect tìm tổng số sản phẩm để tính tổng số trang
 	//Và nó phụ thuộc và state pagination
@@ -136,6 +126,19 @@ function Shop(props) {
 
 		fetchData();
 	}, [pagination]);
+
+		//Hàm này dùng để thay đổi state pagination.category
+		const handlerCategory = (value) => {
+			const categoryFilter = products.filter(product => product.category === value)
+			setProducts(categoryFilter)
+	
+			setPagination({
+				page: pagination.page,
+				count: pagination.count,
+				search: pagination.search,
+				category: value,
+			});
+		};
 
 	return (
 		<div className='container'>
