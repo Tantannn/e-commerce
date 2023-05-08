@@ -188,14 +188,14 @@ function Cart(props) {
 		if (!localStorage.getItem('id_user')) {
 			alertify.set('notifier', 'position', 'bottom-left');
 			alertify.error('Vui Lòng Kiểm Tra Lại Đăng Nhập!');
-			alert('Vui Lòng Kiểm Tra Lại Đăng Nhập!');
+			// alert('Vui Lòng Kiểm Tra Lại Đăng Nhập!');
 			return;
 		}
 
 		if (cart.length === 0) {
 			alertify.set('notifier', 'position', 'bottom-left');
 			alertify.error('Vui Lòng Kiểm Tra Lại Giỏ Hàng!');
-			alert('Vui Lòng Kiểm Tra Lại Giỏ Hàng!');
+			// alert('Vui Lòng Kiểm Tra Lại Giỏ Hàng!');
 
 			return;
 		}
