@@ -195,6 +195,8 @@ function Cart(props) {
 		if (cart.length === 0) {
 			alertify.set('notifier', 'position', 'bottom-left');
 			alertify.error('Vui Lòng Kiểm Tra Lại Giỏ Hàng!');
+			alert('Vui Lòng Kiểm Tra Lại Giỏ Hàng!');
+
 			return;
 		}
 
