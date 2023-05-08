@@ -74,22 +74,7 @@ function Shop(props) {
       if (pagination.category === "all" || !pagination.category) {
         response = await ProductAPI.getAPI();
         setProducts(response);
-      } else {
-        const params = {
-          page: pagination.page,
-          count: pagination.count,
-          search: pagination.search,
-          category: pagination.category,
-        };
-
-        const query = queryString.stringify(params);
-
-        const newQuery = "?" + query;
-
-        response = await ProductAPI.getPagination(newQuery);
-        console.log(response);
-      }
-
+      } 
       //Tính tổng số trang = tổng số sản phẩm / số lượng sản phẩm 1 trang
       const totalPage = Math.ceil(
         parseInt(response.length) / parseInt(pagination.count)

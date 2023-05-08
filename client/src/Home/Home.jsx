@@ -69,7 +69,6 @@ function Home(props) {
 															<Link to={`/detail/${value._id}`}  target="_parent">
 																<p
 																	className='btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0 close '																	
-																	target='_blank'
 																	aria-label="Close"									
 																>
 																	<i className='fa fa-shopping-cart'></i>
