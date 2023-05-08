@@ -8,7 +8,7 @@ router.post('/', createHistory)
 //UPDATE
 router.put('/:id', updateHistory)
 //DELETE
-router.delete('/:id',verifyAdmin, deleteHistory)
+router.delete('/:id', deleteHistory)
 //GET
 router.get('/find/:id', getHistory)
 router.get('/', getAllHistory)

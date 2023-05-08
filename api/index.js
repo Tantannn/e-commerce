@@ -25,7 +25,9 @@ const corsOptions = {
         "https://e-commerce-admin-bunny.netlify.app",
         "https://main--e-commerce-admin-bunny.netlify.app",
         "https://644dd6f763bf6c0008ae4c0d--e-commerce-admin-bunny.netlify.app",
-        "https://main--e-commerce-bunnyy.netlify.app"
+        "https://main--e-commerce-bunnyy.netlify.app",
+        "https://tantannn.github.io/e-commerce/",
+        "https://tantannn.github.io"
     ],
     credentials: true,
     exposedHeaders: ["set-cookie"],
