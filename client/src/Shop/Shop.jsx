@@ -77,7 +77,7 @@ function Shop(props) {
       } 
       //Tính tổng số trang = tổng số sản phẩm / số lượng sản phẩm 1 trang
       const totalPage = Math.ceil(
-        parseInt(response.length) / parseInt(pagination.count)
+        parseInt(response?.length) / parseInt(pagination.count)
       );
       console.log(totalPage);
 

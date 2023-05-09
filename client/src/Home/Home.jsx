@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import ProductAPI from '../API/ProductAPI';
 import Image from '../Share/img/Image';
 import convertMoney from '../convertMoney';
-import { Link } from 'react-router-dom';
+import { Link, useHistory  } from 'react-router-dom';
 
 function Home(props) {
 	const [products, setProducts] = useState([]);
-
+	const history = useHistory()
 	//Fetch Product
 	useEffect(() => {
 		const fetchData = async () => {
@@ -66,17 +66,16 @@ function Home(props) {
 													</p>
 													<div className='row align-items-stretch mb-4'>
 														<div className='col-sm-5 pl-sm-0 fix_addwish'>
-															<Link to={`/detail/${value._id}`}  target="_parent">
 																<p
 																	className='btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0 close '																	
-																	aria-label="Close"									
+																	aria-label="Close"		
+																	onClick={()=> history.push(`/detail/${value._id}`)}
 																>
 																	<i className='fa fa-shopping-cart'></i>
 																	<span className='ml-2'>
 																		View Detail
 																	</span>
 																</p>
-															</Link>
 														</div>
 													</div>
 												</div>
