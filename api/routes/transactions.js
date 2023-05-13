@@ -7,9 +7,9 @@ import { getTransactions, getTransaction, updateTransaction, deleteTransaction, 
 router.post('/', createTransaction)
 router.post('/email', postOrder)
 //UPDATE
-router.put('/:id', updateTransaction)
+router.put('/:id', verifyAdmin, updateTransaction)
 //DELETE
-router.delete('', deleteTransaction)
+router.delete('', verifyAdmin, deleteTransaction)
 //GET
 router.get('/find/:id', getTransaction)
 router.get('/', getTransactions)

@@ -4,11 +4,11 @@ import {verifyAdmin} from '../utils/verifyToken.js'
 const router = express.Router()
 import { getProducts, getProduct, updateProduct, deleteProduct, createProduct } from '../controllers/products.js'
 //CREATE
-router.post('/', createProduct)
+router.post('/',verifyAdmin, createProduct)
 //UPDATE
-router.put('/:id', updateProduct)
+router.put('/:id',verifyAdmin, updateProduct)
 //DELETE
-router.delete('/:id', deleteProduct)
+router.delete('/:id',verifyAdmin, deleteProduct)
 //GET
 router.get('/find/:id', getProduct)
 router.get('/', getProducts)
