@@ -78,7 +78,7 @@ function Header(props) {
 							onClick={() => handlerActive('Home')}>
 							<Link
 								className='nav-link'
-								to={`/`}
+								to={`/e-commerce`}
 								style={
 									active === 'Home'
 										? { color: '#dcb14a' }

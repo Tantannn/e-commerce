@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate,  } from "react-router-dom";
 import UserAPI from "../API/UserAPI";
 import { addSession } from "../Redux/Action/ActionSession";
 import "./Auth.css";
@@ -151,7 +151,7 @@ function SignIn(props) {
           </div>
 
           <div className="container-login100-form-btn m-t-20">
-            {redirect && <Redirect to={`/`} />}
+            {redirect && <Navigate to={`/e-commerce`} />}
             <button className="login100-form-btn" onClick={onSubmit}>
               Sign in
             </button>

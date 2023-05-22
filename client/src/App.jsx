@@ -2,7 +2,7 @@ import './App.css';
 import './css/custom.css';
 import './css/style.default.css';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Footer from './Share/Footer/Footer';
 import Header from './Share/Header/Header';
@@ -21,16 +21,16 @@ function App() {
 		<div className='App'>
 			<BrowserRouter>
 				<Header />
-				<Switch>
-					<Route exact path='/' component={Home} />{' '}
-					<Route path='/detail/:id' component={Detail} />{' '}
-					<Route path='/cart' component={Cart} />{' '}
-					<Route path='/signin' component={SignIn} />{' '}
-					<Route path='/signup' component={SignUp} />{' '}
-					<Route path='/checkout' component={Checkout} />{' '}
-					<Route path='/history' component={History} />{' '}
-					<Route path='/shop' component={Shop} />
-				</Switch>{' '}
+				<Routes>
+		<Route exact path='/e-commerce' element={<Home/>} />{' '}
+					<Route path='/detail/:id' element={<Detail/>} />{' '}
+					<Route path='/cart' element={<Cart/>} />{' '}
+					<Route path='/signin' element={<SignIn/>} />{' '}
+					<Route path='/signup' element={<SignUp/>} />{' '}
+					<Route path='/checkout' element={<Checkout/>} />{' '}
+					<Route path='/history' element={<History/>} />{' '}
+					<Route path='/shop' element={<Shop/>} />
+				</Routes>{' '}
 			</BrowserRouter>
 
 			<Chat />

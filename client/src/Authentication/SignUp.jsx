@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import UserAPI from '../API/UserAPI';
 import './Auth.css';
 import queryString from 'query-string';
@@ -220,7 +220,7 @@ function SignUp(props) {
 					</div>
 
 					<div className='container-login100-form-btn m-t-20'>
-						{success && <Redirect to={'/signin'} />}
+						{success && <Navigate to={'/signin'} />}
 						<button className='login100-form-btn' onClick={handlerSignUp}>
 							Sign Up
 						</button>

@@ -2,19 +2,16 @@ import React, { useEffect, useState } from 'react';
 import ProductAPI from '../API/ProductAPI';
 import Image from '../Share/img/Image';
 import convertMoney from '../convertMoney';
-import { Link, useHistory  } from 'react-router-dom';
+import { Link,  Navigate } from 'react-router-dom';
 
 function Home(props) {
 	const [products, setProducts] = useState([]);
-	const history = useHistory()
 	//Fetch Product
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await ProductAPI.getAPI();
 			console.log(response);
-
 			const data = response.splice(0, 8);
-
 			setProducts(data);
 		};
 
@@ -66,16 +63,14 @@ function Home(props) {
 													</p>
 													<div className='row align-items-stretch mb-4'>
 														<div className='col-sm-5 pl-sm-0 fix_addwish'>
-																<p
-																	className='btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0 close '																	
-																	aria-label="Close"		
-																	onClick={()=> history.push(`/detail/${value._id}`)}
-																>
-																	<i className='fa fa-shopping-cart'></i>
-																	<span className='ml-2'>
-																		View Detail
-																	</span>
-																</p>
+														{/* <Link
+                                className="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0"
+                                target="_parent"
+                                to={`/detail/${value._id}`}
+                              >
+                                <i className="fa fa-shopping-cart"></i>
+                                <span className="ml-2">View Detail</span>
+                              </Link> */}
 														</div>
 													</div>
 												</div>
@@ -203,12 +198,12 @@ function Home(props) {
 												</a>
 												<div className='product-overlay'>
 													<ul className='mb-0 list-inline'>
-														{/* <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li> */}
-														{/* <li className="list-inline-item m-0 p-0">
+														<li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
+														<li className="list-inline-item m-0 p-0">
                                                             <Link className="btn btn-sm btn-dark" to={`/detail/${value._id}`}>
                                                                 Add to cart
                                                             </Link>
-                                                        </li> */}
+                                                        </li>
 													</ul>
 												</div>
 											</div>

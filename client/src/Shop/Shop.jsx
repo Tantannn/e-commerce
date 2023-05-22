@@ -7,7 +7,7 @@ import Pagination from "./Component/Pagination";
 import Products from "./Component/Products";
 import SortProduct from "./Component/SortProduct";
 import convertMoney from "../convertMoney";
-
+import {useNavigate} from 'react-router-dom';
 function Shop(props) {
   const [products, setProducts] = useState([]);
 
@@ -18,10 +18,11 @@ function Shop(props) {
   const [totalPage, setTotalPage] = useState();
 
   // Get category parram from url by localtion
+  const navigate = useNavigate()
   const category =
     new URLSearchParams(window.location.search).get("category") || "all";
+  
   console.log(category);
-
   //Từng trang hiện tại
   const [pagination, setPagination] = useState({
     page: "1",
@@ -67,12 +68,14 @@ function Shop(props) {
   //Và nó phụ thuộc và state pagination
   useEffect(() => {
     const fetchAllData = async () => {
-      let response;
-
+        let response = await ProductAPI.getAPI();
+      console.log(response);
+      console.log(category);
+      const data = response.filter(data => data.category === category)
+        setProducts(data);
       // Nếu mà category === 'all' thì nó sẽ gọi hàm get tất cả sản phẩm
       // Ngược lại thì nó sẽ gọi hàm pagination và phân loại sản phẩm
       if (pagination.category === "all" || !pagination.category) {
-        response = await ProductAPI.getAPI();
         setProducts(response);
       } 
       //Tính tổng số trang = tổng số sản phẩm / số lượng sản phẩm 1 trang
@@ -80,7 +83,6 @@ function Shop(props) {
         parseInt(response?.length) / parseInt(pagination.count)
       );
       console.log(totalPage);
-
       setTotalPage(totalPage);
     };
 
@@ -98,11 +100,8 @@ function Shop(props) {
       };
 
       const query = queryString.stringify(params);
-
       const newQuery = "?" + query;
-
       const response = await ProductAPI.getPagination(newQuery);
-
       setProducts(response);
     };
 
@@ -111,10 +110,8 @@ function Shop(props) {
 
   //Hàm này dùng để thay đổi state pagination.category
   const handlerCategory = (value) => {
-    const categoryFilter = products.filter(
-      (product) => product.category === value
-    );
-    setProducts(categoryFilter);
+    console.log(value);
+    navigate(`/shop?category=${value}#`)
 
     setPagination({
       page: pagination.page,
