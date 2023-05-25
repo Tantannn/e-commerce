@@ -34,11 +34,9 @@ function Cart(props) {
 		const fetchDataRedux = () => {
 			if (!localStorage.getItem('id_user')) {
 				setCart(listCart);
-
 				getTotal(listCart);
 			}
 		};
-
 		fetchDataRedux();
 	}, [loadRedux,listCart]);
 
@@ -60,15 +58,12 @@ function Cart(props) {
 		const fetchData = async () => {
 			if (localStorage.getItem('id_user')) {
 				const params = localStorage.getItem('id_user')
-				
 				const response = await CartAPI.getCarts(params);
 				setCart(response);
 				getTotal(response);
 			}
 		};
-
 		fetchData();
-
 		setLoadAPI(false);
 	}, [loadAPI]);
 
@@ -85,8 +80,8 @@ function Cart(props) {
 					idUser: getUser,
 					idProduct: getProduct,
 				};
-
 				const query = '?' + queryString.stringify(params);
+				console.log(query);
 				await CartAPI.deleteToCart(query);
 			};
 
