@@ -5,7 +5,7 @@ import convertMoney from "../convertMoney";
 import "./Checkout.css";
 
 import io from "socket.io-client";
-const socket = io("http://localhost:5000");
+const socket = io("http://localhost:5000/api");
 
 function Checkout(props) {
   const [carts, setCarts] = useState([]);
