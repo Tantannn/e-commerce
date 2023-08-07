@@ -4,10 +4,14 @@ import CheckoutAPI from "../API/CheckoutAPI";
 import convertMoney from "../convertMoney";
 import "./Checkout.css";
 
+import { Manager } from "socket.io-client";
 import io from "socket.io-client";
-const socket = io("http://localhost:5000/api");
 
-function Checkout(props) {
+const manager = new Manager("http://localhost:5000/api");
+
+const socket = manager.socket("/");
+
+function Checkout() {
   const [carts, setCarts] = useState([]);
 
   const [total, setTotal] = useState(0);

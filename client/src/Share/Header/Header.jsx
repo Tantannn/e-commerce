@@ -56,7 +56,7 @@ function Header(props) {
 	return (
 		<div className='container px-0 px-lg-3'>
 			<nav className='navbar navbar-expand-lg navbar-light py-3 px-lg-0'>
-				<Link className='navbar-brand' to={`/`}>
+				<Link className='navbar-brand' to={`/e-commerce`}>
 					<span className='font-weight-bold text-uppercase text-dark'>
 						Boutique
 					</span>
